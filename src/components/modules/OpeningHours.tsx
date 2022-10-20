@@ -26,6 +26,7 @@ function OpeningHours() {
       width={400}
       boxShadow={`0px 0px 15px ${theme.colors.grey_2}`}
       boxSizing="border-box"
+      height="fit-content"
     >
       <Header />
       {data ? <Timings timings={data}/> : <Text fontSize="sm" padding="sm">No timings available</Text>}
