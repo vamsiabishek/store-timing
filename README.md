@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Opening hours
+In this app we are using ReactJS, Typescript and Styled components for styling.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to use
 
-In the project directory, you can run:
+### Step 1: NodeJS and npm
+Download and install __[Node.js v16.13.1](https://nodejs.org/dist/v16.13.1/)__.(preferabally latest stable version)
 
-### `npm start`
+### Step 2: Get dependency packages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    npm install or yarn
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Step 3: Start project
+To run the development server:
 
-### `npm test`
+```bash
+npm run start
+# or
+yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Hooks
+We are using a hook called `useFetchOpeningHours` which basically responsible for providing us the data that needs to be displayed. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The major logic of formatting the data into the displayable format takes place in the file called `src/utils/timing-utils.ts`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Styling
+We are using ThemeProvider from `styled-components` and `styled-system` which lets you quickly build custom UI components with constraint-based style props based on scales defined in your theme as design tokens. Refer to `src/components/theme/ThemeProvider.tsx`
 
-### `npm run eject`
+### Testing
+Run the following command: `npm run test`, this also provides the coverage of the test files.
+Refer to `jest.config.js` to make any changes to test configurations.
+All the tests are written under the sub folders called `__tests__`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Refer to test-utils file which provides methods that wrap the providers `src/utils/tests/test-utils`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Typescript Types are mentioned under `interfaces` folder (Example: IStoreTimings, IOpenings in timings.ts) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

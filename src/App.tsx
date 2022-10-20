@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ThemeProvider, { theme } from './components/theme/ThemeProvider';
+import OpeningHours from './components/modules/OpeningHours';
+import Box from './components/atoms/Box';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Box
+        display="flex"
+        justifyContent="center"
+        padding="md"
+        background={theme.colors.grey_1}
+      >
+        <OpeningHours />
+      </Box>
+    </ThemeProvider>
   );
 }
 
